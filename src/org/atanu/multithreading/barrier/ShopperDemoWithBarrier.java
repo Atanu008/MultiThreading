@@ -5,7 +5,9 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+//Barron Thread will start multiplying chips only when all the olivia Thread done adding chips
 public class ShopperDemoWithBarrier {
+
     private static class Shopper extends Thread {
 
         public static int bagsOfChips = 1; // start with one on the list
