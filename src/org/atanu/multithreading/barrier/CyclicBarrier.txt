@@ -1,0 +1,7 @@
+CyclicBarriers are used in programs in which we have a fixed number of threads
+that must wait for each other to reach a common point before continuing execution.
+
+References:
+https://www.baeldung.com/java-cyclic-barrier
+https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/CyclicBarrier.html
+https://www.educative.io/courses/java-multithreading-for-senior-engineering-interviews/q2NLpkzMDNG
