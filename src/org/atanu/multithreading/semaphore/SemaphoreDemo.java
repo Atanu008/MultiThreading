@@ -9,6 +9,11 @@ import java.util.stream.IntStream;
 
 //https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html#acquire()
 //https://www.youtube.com/watch?v=shH38znT_sQ
+
+// Releases a permit, increasing the number of available permits by one.
+// If any threads are trying to acquire a permit, then one is selected and given the permit that was just released.
+// That thread is (re)enabled for thread scheduling purposes.
+
 public class SemaphoreDemo {
 
     final static private int PERMIT = 3;

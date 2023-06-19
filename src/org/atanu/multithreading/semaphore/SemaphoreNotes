@@ -1,0 +1,32 @@
+
+Official Doc : https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html#acquire()
+
+
+acquire() Vs acquireUninterruptibly:
+
+acquire() is interruptible. That means if a thread A is calling acquire() on a semaphore,
+and thread B interrupts threads A by calling interrupt(), then an InterruptedException will be thrown on thread A.
+
+On the other hand acquireUninterruptibly() is not interruptible.
+That means if a thread A is calling acquireUninterruptibly() on a semaphore,
+and thread B interrupts threads A by calling interrupt(), then no InterruptedException will be thrown on thread A,
+just that thread A will have its interrupted status set after acquireUninterruptibly() returns.
+
+acquire():
+Acquires a permit from this semaphore, blocking until one is available, or the thread is interrupted.
+Acquires a permit, if one is available and returns immediately, reducing the number of available permits by one.
+If no permit is available then the current thread becomes disabled for thread scheduling purposes
+and lies dormant until one of two things happens:
+Some other thread invokes the release() method for this semaphore and the current thread is next to be assigned a permit; or
+Some other thread interrupts the current thread.
+
+tryAcquire() :
+Acquires a permit, if one is available and returns immediately, with the value true,
+reducing the number of available permits by one.
+If no permit is available then this method will return immediately with the value false.
+
+release():
+Releases a permit, returning it to the semaphore.
+Releases a permit, increasing the number of available permits by one.
+If any threads are trying to acquire a permit, then one is selected and given the permit that was just released.
+That thread is (re)enabled for thread scheduling purposes.
